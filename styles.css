@@ -1,23 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Open+Sans:ital,wght@1,300&family=Roboto&family=Ubuntu:wght@300&display=swap');
+
 @font-face {
   font-family: logo-font;
   src: url(./Norse-Bold.otf);
+}
+:root {
+	--background-clr: #f7f9fb;
+
+	--primary-clr: #31708E;
+	--secondary-clr: rgb(80, 133, 165, 0.2);
+	--tertiary-clr: #8FC1E3;
+	
+	--higlight-clr: #687864;
+
+	--font-family: 'Roboto', sans-serif;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: var(--font-family);
 }
 
-:root {
-	--background-clr: #f7f9fb;
-
-	--primary-clr: #31708E;
-	--secondary-clr: #5085A5;
-	--tertiary-clr: #8FC1E3;
-	
-	--higlight-clr: #687864;
-}
 .container {
 	background-color: var(--background-clr);
 	width: 100vw;
@@ -26,28 +31,49 @@
 }
 
 .left-side {
-	background: var(--tertiary-clr) center/cover url("./bgimg.jpg") no-repeat;
+	width: 35vw;
 	flex-grow: 1;
+	background: var(--tertiary-clr) center/cover url("./bgimg.jpg") no-repeat;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
-.rigth-side {
+.rigth-side {	
+	width: 65vw;
+	flex-grow: 1;
 	background-color: var(--tertiary-clr);
-	flex-grow: 4;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.rigth-side > div {
+	padding: 0 5%;
+}
+
+.text-right {
+	margin-top: 10%;
+	font-weight: 400;
+	font-size: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	line-height: 1.4;
 }
 
 .logo {
-	margin-top: 100px;
-	padding: 0px 50px;
+	margin-top: 80px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 50px;
+	
 	background-color: rgb(104, 120, 100, 0.2);
-	font-family: logo-font;
 	font-size: 2.75em;
+}
+.logo h1{
+	font-family: logo-font;
 }
 
 .left-side .footer {
@@ -56,6 +82,52 @@
 	flex-direction: row-reverse;
 }
 
+.form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+	background-color: var(--secondary-clr);
+	gap: 10px;
+	box-shadow: var(--primary-clr) 5px 4px;
+}
+.form-row {
+	display: flex;
+	margin-top: 15px;
+}
+
+.row-element {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.row-element input {
+	padding: 0.5em;
+  border: 1px solid #666;
+  border-radius: 5px;
+	width: 50%;
+}
+
+input:focus{
+	border: 1px solid black;
+  box-shadow: 5px 8px var(--higlight-clr);
+	background-color: var(--secondary-clr);
+}
+
+.button {
+	margin-top: 50px;
+
+}
+.button button { 
+	margin-bottom: 15px;
+	background-color: var(--higlight-clr);
+	font-size: 24px;
+	border-radius: 10px;
+	border: 1px solid black;
+	padding: 10px 24px;
+	color: white;
+	font-weight: bold;
+}
 
 @media only screen and (max-width: 1026px) {
 	.left-side {
